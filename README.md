@@ -22,3 +22,24 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+Create a User using rails console
+
+rails c
+> santu = User.new
+> santu.email = "santuapp@address.com"
+> santu.password = "santu1234"
+> santu.save
+
+    Add a role to the new User
+
+> santu.add_role "admin"
+
+    Check if the user has admin rights
+
+> santu_ability = Ability.new(santu)
+> santu_ability.can? :manage, :all
+  => true
+
+
